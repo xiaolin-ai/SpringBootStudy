@@ -1,0 +1,42 @@
+#server:
+  #port: 8125
+
+#测试加盐算法解码
+jasypt:
+  encryptor:
+    password: Hello
+
+info:
+  password: ENC(YWdRv3dF1/fkzzCP2AgHbw==)
+  username: ENC(MWP4WSvIjLR0LGGUnJJWpA==)
+
+# 建议使用清晰的结构
+food:
+  rice: 五常大米
+  meat: 梅菜扣肉
+  sauce:
+    - 微辣
+    - 麻辣
+    - 中辣
+    - 重辣
+
+#流式语法 不建议使用
+#food: {meat: 烤肉, rice: 拌饭}
+
+spring:
+  profiles:
+    active: dev
+---
+#开发环境
+spring:
+  profiles: dev
+server:
+  port: 8848
+
+---
+#生产环境
+spring:
+  profiles: prod
+
+server:
+  port: 9999
