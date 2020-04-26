@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <!--转义和非转义的html th:text会对<和>进行转义，而th:utext不会转义。-->
+       <!-- <p th:utext="${name}" >name</p>
+        <p th:text="${name}" >name</p>-->
+
+    <!--变量表达式-->
+        <span style="color: red" th:text="${user.username}" >username</span><br/>
+        <span style="color: red" th:text="${user.password}" >password</span><br/>
+        <span style="color: red" th:text="${user.id}" >id</span>
+    <!--选择变量表达式-->
+        <div th:object="${user}">
+            <span style="color: red" th:text="*{username}" >username</span><br/>
+            <span style="color: red" th:text="*{password}" >password</span><br/>
+            <span style="color: red" th:text="${user.id}" >hh</span>
+        </div>
+    <!--连接url表达式-->
+        <a href="/welcome" th:href="@{/test}">welcome</a>
+    <!--消息表达式-->
+        <p th:utext="#{message}">welcome to java</p>
+    <!--片段表达式-->
+    <div th:insert="footer :: copy"></div>
+    <div th:replace="footer :: copy"></div>
+    <div th:include="footer :: copy"></div>
+    </body>
+</html>

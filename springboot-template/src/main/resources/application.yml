@@ -1,0 +1,13 @@
+server:
+  port: 8123
+
+#spring:
+ # mvc:
+    #view:
+    #以下配置是对freemarker有效的
+    #prefix: /templates/
+      #suffix: .ftl
+#debug: true
+spring:
+  messages:
+    basename: hello
