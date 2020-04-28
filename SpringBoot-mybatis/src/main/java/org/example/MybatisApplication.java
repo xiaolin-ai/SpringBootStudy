@@ -4,11 +4,12 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- * @author LENOVO
- */
 @SpringBootApplication
-@MapperScan("org.example.dao")
+//@MapperScan("org.example.dao")//mybatis自带的扫描器
+/**
+ * 以下是tk.mybatis插件的扫描器
+ */
+@tk.mybatis.spring.annotation.MapperScan("org.example.dao")
 public class MybatisApplication {
 
     public static void main(String[] args) {

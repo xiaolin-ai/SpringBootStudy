@@ -11,6 +11,7 @@
 
         <form th:action="@{/guest}" th:object="${guest}" method="post" class="form-horizontal">
             <input type="hidden" name="_method" value="put">
+            <input type="hidden" name="id" th:value="*{id}"/>
             <div class="form-group">
                 <label class="col-sm-2 control-label">名字：</label>
                 <div class="col-sm-5">

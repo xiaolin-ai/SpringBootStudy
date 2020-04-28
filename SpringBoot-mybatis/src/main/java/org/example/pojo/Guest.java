@@ -2,6 +2,9 @@ package org.example.pojo;
 
 import lombok.*;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+
 
 /**
  * @Author: aixiaolin
@@ -10,7 +13,10 @@ import lombok.*;
  */
 @Data
 public class Guest {
+    @Id
+    private Integer id;
+
+    @Column
     private String name;
     private String role;
-    private int id;
 }

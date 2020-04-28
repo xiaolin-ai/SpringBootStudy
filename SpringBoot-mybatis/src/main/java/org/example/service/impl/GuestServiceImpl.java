@@ -1,6 +1,7 @@
 package org.example.service.impl;
 
 import org.example.dao.GuestMapper;
+import org.example.dao.TkGuestMapper;
 import org.example.pojo.Guest;
 import org.example.service.GuestService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +17,15 @@ import java.util.List;
 @Service
 public class GuestServiceImpl implements GuestService {
 
-    @Autowired
-    private GuestMapper mapper;
+    //@Autowired
+    //private GuestMapper mapper;
 
+    @Autowired
+    private TkGuestMapper mapper;
     @Override
     public List<Guest> list() {
-        return this.mapper.allGuest();
+        return this.mapper.selectAll();
+        //return this.mapper.allGuest();
     }
 
     @Override
@@ -36,16 +40,26 @@ public class GuestServiceImpl implements GuestService {
 
     @Override
     public boolean delete(String name) {
-        return this.mapper.delete(name) == 1;
+        Guest guest = new Guest();
+        guest.setName(name);
+        System.out.println(this.mapper.delete(guest));
+        return false;
+        //return this.mapper.delete(name) == 1;
     }
 
     @Override
     public boolean update(Guest guest) {
-        return this.mapper.update(guest) == 1;
+        System.out.println(this.mapper.updateByPrimaryKeySelective(guest));
+        return false;
+        //return this.mapper.update(guest) == 1;
     }
 
     @Override
     public Guest getGuest(String name) {
-        return this.mapper.oneGuest(name);
+        Guest guest = new Guest();
+        guest.setName(name);
+
+        return this.mapper.selectOne(guest);
+        //return this.mapper.oneGuest(name);
     }
 }
