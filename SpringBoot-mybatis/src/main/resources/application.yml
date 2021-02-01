@@ -4,11 +4,15 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://aixiaolin.cn:3306/test?useSSL=false&useUnicode=true
+    url: jdbc:mysql://localhost:3306/study?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     username: admin
     password: admin
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
+    #url: ${jdbc.url}
+    #username: ${jdbc.username}
+    #password: ${jdbc.password}
+    #driver-class-name: ${jdbc.driver}
 mybatis:
   #无需config.xml文件的配置
   mapper-locations: classpath*:/mapper/*.xml #此行可以省略，以注解替代

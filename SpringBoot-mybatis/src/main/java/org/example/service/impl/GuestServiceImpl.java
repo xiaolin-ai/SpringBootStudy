@@ -58,7 +58,6 @@ public class GuestServiceImpl implements GuestService {
     public Guest getGuest(String name) {
         Guest guest = new Guest();
         guest.setName(name);
-
         return this.mapper.selectOne(guest);
         //return this.mapper.oneGuest(name);
     }

@@ -3,7 +3,11 @@ package org.example;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
+/**
+ * @author LENOVO
+ */
 @SpringBootApplication
 //@MapperScan("org.example.dao")//mybatis自带的扫描器
 /**
